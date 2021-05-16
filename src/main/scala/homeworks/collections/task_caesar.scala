@@ -12,13 +12,14 @@ object task_caesar {
    * Сдвиг   - неотрицательное целое число.
    * Пример: при сдвиге 2 слово "SCALA" шифруется как "UECNC".
    */
+
   /**
    * @param word   входное слово, которое необходимо зашифровать
    * @param offset сдвиг вперёд по алфавиту
    * @return зашифрованное слово
    */
   def encrypt(word: String, offset: Int): String =
-    task"Реализуйте метод `encrypt`"()
+    word.map(c => if (c + offset % ABCSize > 'Z') ('A' + (c + offset % ABCSize - 'Z' - 1)).toChar else (c + offset % ABCSize).toChar)
 
   /**
    * @param cipher шифр, который необходимо расшифровать
@@ -26,6 +27,7 @@ object task_caesar {
    * @return расшифрованное слово
    */
   def decrypt(cipher: String, offset: Int): String =
-    task"Реализуйте метод `decrypt`"()
+    cipher.map(c => if (c - offset % ABCSize < 'A') ('Z' - ('A' - (c - offset % ABCSize) - 1)).toChar else (c - offset % ABCSize).toChar)
 
+  lazy val ABCSize = 26
 }
