@@ -23,7 +23,6 @@ object task_seq_riddle {
        case (2, 1 :: 1 :: Nil) => 1 :: 2 :: 1 :: 1 :: Nil
        case (2, 2 :: 1 :: Nil) => 2 :: 2 :: 1 :: Nil
        case (1, 2 :: 2 :: 1 :: Nil) => 1 :: 1 :: 1 :: 2 :: 2 :: 1 :: Nil
-       case (1, 2 :: 2 :: 1 :: Nil) => 1 :: 2 :: 2 :: 1 :: Nil
 
        case (x, 1 :: y :: 1 :: 1 :: xs) if x==y => x :: 1 :: 1 :: xs
        case (1, x :: 1 :: 1 :: xs) => x :: x :: 1 :: 1 :: xs
