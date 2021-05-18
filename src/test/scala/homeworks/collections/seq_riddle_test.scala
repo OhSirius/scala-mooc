@@ -9,10 +9,23 @@ class seq_riddle_test extends AnyFlatSpec {
     assert(nextLine(List(1, 2, 1, 1)) === List(1, 1, 1, 2, 2, 1))
     assert(nextLine(List(1, 1, 1, 2, 2, 1)) === List(3, 1, 2, 2, 1, 1))
     assert(nextLine(List(3, 1, 2, 2, 1, 1)) === List(1, 3, 1, 1, 2, 2, 2, 1))
+
+    //Доп. тесты
+    assert(nextLine(List(1)) === List(1, 1))
+    assert(nextLine(List(1, 1)) === List(2, 1))
+    assert(nextLine(List(1, 3, 1, 1, 2, 2, 2, 1)) === List(1, 1, 1, 3, 3, 1, 2, 2, 1, 1))
+    assert(nextLine(List(1, 1, 1, 3, 3, 1, 2, 2, 1, 1)) === List(4, 1, 3, 3, 1, 1, 2, 2, 2, 1))
+    assert(nextLine(List(4, 1, 3, 3, 1, 1, 2, 2, 2, 1)) === List(1, 4, 1, 1, 3, 3, 3, 1, 2, 2, 1, 1))
+    assert(nextLine(List(1, 4, 1, 1, 3, 3, 3, 1, 2, 2, 1, 1)) === List(1, 1, 1, 4, 4, 1, 3, 3, 1, 1, 2, 2, 2, 1))
   }
 
   "funSeq" should "produce next line" in {
     assert(task_seq_riddle.funSeq(5) === List(3, 1, 2, 2, 1, 1))
+
+    //Доп. тесты
+    assert(task_seq_riddle.funSeq(0) === List(1))
+    assert(task_seq_riddle.funSeq(1) === List(1,1))
+    assert(task_seq_riddle.funSeq(6) === List(1, 3, 1, 1, 2, 2, 2, 1))
   }
 
 }
